@@ -1,7 +1,7 @@
 pipeline{
     tools{
-        jdk 'myjava'
-        maven 'mymaven'
+        jdk 'maven'
+        maven 'maven'
     }
     agent none
       stages{
@@ -12,13 +12,13 @@ pipeline{
               }
           }
           stage('Compile'){
-              agent any
+              
               steps{
                   sh 'mvn compile'
               }
           }
           stage('UnitTest'){
-              agent{label 'linux_slave'}
+              
               steps{
                   git 'https://github.com/devops-trainer/game-of-life.git'
                   sh 'mvn test'
@@ -30,7 +30,7 @@ pipeline{
               }
           }
           stage('Package'){
-              agent any
+              
               steps{
                   sh 'mvn package'
               }
