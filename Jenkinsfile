@@ -26,7 +26,7 @@ pipeline{
                 sh 'mvn test'
             }
             
-            // Generate readable Unit test report//
+            // Generate readable Unit test reports//
             post{
                 always{
                     junit 'gameoflife-web/target/surefire-reports/*.xml'
