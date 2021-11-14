@@ -29,7 +29,7 @@ pipeline{
             // Generate readable Unit test reportss//
             post{
                 always{
-                    junit 'gameoflife-web/target/surefire-reports/*.xml'
+                    junit 'gameoflife-web/target/surefire-reportss/*.xml'
                 }
             }    
         }
